@@ -1,0 +1,84 @@
+//
+//  PrefixHeader.pch
+//  CRM
+//
+//  Created by mini on 16/8/23.
+//  Copyright © 2016年 武汉至简天成科技有限公司. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef __OBJC__
+#import"UIView+Category.h"
+#import "UIBarButtonItem+Items.h"
+#import "NSString+Cagetory.h"
+#import "UILabel+Cagetory.h"
+#import "UIButton+Cagetory.h"
+#import "ZJConst.h"
+#import "UIColor+K.h"
+#import "SCChart.h"
+#import "NSDate+Category.h"
+#endif
+
+#ifdef DEBUG
+
+#define ZJLog(...) NSLog(__VA_ARGS__)
+
+#else
+
+#define ZJLog(...)
+
+#endif
+
+#define ZJLogFunc  ZJLog(@"%s",__func__)
+
+//屏幕适配
+#define PX2PT(px)  (([UIScreen mainScreen].bounds.size.height/736.0)*(px)/3.0)
+
+#define ZJRGBColor(r,g,b,a)   [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+//颜色
+#define ZJBackGroundColor ZJRGBColor(247,247,247,1.0)
+
+#define ZJColorDCDCDC  ZJRGBColor(220, 220, 220, 1.0)
+
+#define ZJColor505050   ZJRGBColor(80, 80, 80, 1.0)
+
+#define ZJColor00D3A3 ZJRGBColor(0, 211, 163, 1.0)
+
+#define ZJColorFFFFFF ZJRGBColor(255, 255, 255, 1.0)
+#define ZJColor848484 ZJRGBColor(132,132,132,1.0)
+
+//常用间距
+#define ZJmargin40  PX2PT(40)
+//常用字体大小
+#define ZJTextSize35PX  PX2PT(35)
+
+#define ZJTextSize45PX  PX2PT(45)
+
+#define ZJTextSize55PX  PX2PT(55)
+
+//屏幕属性
+#define zjScreenWidth [UIScreen mainScreen].bounds.size.width
+
+#define zjScreenHeight [UIScreen mainScreen].bounds.size.height
+//沙盒路劲
+#define ZJDocumentPath  [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject]
+
+//表名
+#define ZJCustomerTableName @"crm_CustomerInfo"
+#define ZJFollowTableName  @"crm_FollowUp"
+#define ZJRemindTableName  @"crm_Remind"
+#define ZJGoalTableName   @"crm_Goal"
+#define ZJGtasksTableName   @"crm_Gtasks"
+#define ZJCustomerItemsTableName   @"crm_CustomerItems"
+
+//产生唯一标识
+#define  KEY_USERNAME_PASSWORD @"com.company.app.usernamepassword"
+#define  KEY_USERNAME @"com.company.app.username"
+#define  KEY_PASSWORD @"com.company.app.password"
+//网络密文
+#define CIPHER @"93395994D2D17D35"
+//域名
+#define THEURL @"https://www.haoke77.com"
+#endif /* PrefixHeader_pch */
